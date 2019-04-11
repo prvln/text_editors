@@ -9,7 +9,6 @@ NotePad::NotePad(QWidget *parent) :
     this->setWindowTitle("TextEditor v.0.1");
 }
 
-
 void NotePad::on_actionOpen_triggered()
 {
  QString file_name = QFileDialog::getOpenFileName(this,"Open a file");
@@ -29,7 +28,6 @@ void NotePad::on_actionOpen_triggered()
   }
 }
 
-
 void NotePad::on_actionSave_triggered()
 {
      QFile file(file_path);
@@ -45,7 +43,6 @@ void NotePad::on_actionSave_triggered()
       file.close();
     }
 }
-
 
 void NotePad::on_actionSave_as_triggered()
 {
@@ -65,19 +62,8 @@ void NotePad::on_actionSave_as_triggered()
      }
 }
 
+void NotePad::on_undo_clicked() { ui->textEdit->undo(); }
 
-void NotePad::on_undo_clicked()
-{
-    ui->textEdit->undo();
-}
+void NotePad::on_redo_clicked() { ui->textEdit->redo(); }
 
-
-void NotePad::on_redo_clicked()
-{
-    ui->textEdit->redo();
-}
-
-NotePad::~NotePad()
-{
-    delete ui;
-}
+NotePad::~NotePad() { delete ui; }
