@@ -18,9 +18,9 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -33,10 +33,10 @@ public:
     QAction *actionSave_as;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QFontComboBox *fontComboBox;
     QComboBox *comboBox;
+    QFontComboBox *fontComboBox;
     QSpacerItem *horizontalSpacer;
-    QPlainTextEdit *plainTextEdit;
+    QTextEdit *textEdit;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QStatusBar *statusBar;
@@ -45,7 +45,7 @@ public:
     {
         if (NotePad->objectName().isEmpty())
             NotePad->setObjectName(QString::fromUtf8("NotePad"));
-        NotePad->resize(715, 507);
+        NotePad->resize(797, 574);
         actionOpen = new QAction(NotePad);
         actionOpen->setObjectName(QString::fromUtf8("actionOpen"));
         actionSave = new QAction(NotePad);
@@ -58,29 +58,29 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        fontComboBox = new QFontComboBox(centralWidget);
-        fontComboBox->setObjectName(QString::fromUtf8("fontComboBox"));
-
-        gridLayout->addWidget(fontComboBox, 0, 0, 1, 1);
-
         comboBox = new QComboBox(centralWidget);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
 
         gridLayout->addWidget(comboBox, 0, 1, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        fontComboBox = new QFontComboBox(centralWidget);
+        fontComboBox->setObjectName(QString::fromUtf8("fontComboBox"));
+
+        gridLayout->addWidget(fontComboBox, 0, 0, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(504, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer, 0, 2, 1, 1);
 
-        plainTextEdit = new QPlainTextEdit(centralWidget);
-        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+        textEdit = new QTextEdit(centralWidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
 
-        gridLayout->addWidget(plainTextEdit, 1, 0, 1, 3);
+        gridLayout->addWidget(textEdit, 1, 0, 1, 3);
 
         NotePad->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(NotePad);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 715, 21));
+        menuBar->setGeometry(QRect(0, 0, 797, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         NotePad->setMenuBar(menuBar);
