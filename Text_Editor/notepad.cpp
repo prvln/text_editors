@@ -30,6 +30,23 @@ void NotePad::on_actionOpen_triggered()
 }
 
 
+void NotePad::on_actionSave_triggered()
+{
+     QFile file(file_path);
+    if(!file.open(QFile::WriteOnly | QFile::Text)){
+      return;
+    }
+    else{
+      //Read the file
+      QTextStream writeData(&file);
+      QString fileText = ui->textEdit->toHtml();
+      writeData << fileText;
+      file.flush();
+      file.close();
+    }
+}
+
+
 void NotePad::on_actionSave_as_triggered()
 {
     QString file_name = QFileDialog::getSaveFileName(this,"Save a file");
@@ -46,6 +63,18 @@ void NotePad::on_actionSave_as_triggered()
        file.flush();
        file.close();
      }
+}
+
+
+void NotePad::on_undo_clicked()
+{
+    ui->textEdit->undo();
+}
+
+
+void NotePad::on_redo_clicked()
+{
+    ui->textEdit->redo();
 }
 
 NotePad::~NotePad()

@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-04-11T23:58:14
+# Project created by QtCreator 2019-04-12T01:59:51
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = TextEditorVEGA
+TARGET = Text_Editor
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
