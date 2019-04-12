@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>427</height>
+    <width>678</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,38 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="3">
+     <widget class="QPushButton" name="button_copy">
+      <property name="text">
+       <string>Copy</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="redo">
+      <property name="text">
+       <string>Redo</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="8">
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="undo">
+      <property name="text">
+       <string>Undo</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QPushButton" name="set_style_button">
+      <property name="text">
+       <string>Set style</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="7">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -28,46 +59,17 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="redo">
+    <item row="0" column="6">
+     <widget class="QPushButton" name="setBackgroundButton">
       <property name="text">
-       <string>Redo</string>
+       <string>Set BackGround</string>
       </property>
      </widget>
     </item>
     <item row="0" column="4">
-     <widget class="QFontComboBox" name="fontComboBox"/>
-    </item>
-    <item row="1" column="0" colspan="7">
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-    <item row="0" column="3">
-     <widget class="QComboBox" name="comboBox"/>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="undo">
+     <widget class="QPushButton" name="button_paste">
       <property name="text">
-       <string>Undo</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="6">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="5">
-     <widget class="QPushButton" name="setBackgroundButton">
-      <property name="text">
-       <string>SET BACKGROUND</string>
+       <string>Paste</string>
       </property>
      </widget>
     </item>
@@ -78,7 +80,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>552</width>
+     <width>678</width>
      <height>21</height>
     </rect>
    </property>
@@ -89,6 +91,9 @@
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_as"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionNew"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -106,6 +111,11 @@
   <action name="actionSave_as">
    <property name="text">
     <string>Save as</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
    </property>
   </action>
  </widget>

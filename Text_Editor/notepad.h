@@ -7,14 +7,12 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
-#include <qtextedit.h>
 #include <QFontDialog>
 #include <QFont>
 #include <QFontDatabase>
 #include <QTextCursor>
 #include <QColor>
 #include <QColorDialog>
-#include <QSyntaxHighlighter>
 #include <QtGui>
 
 namespace Ui {
@@ -35,8 +33,13 @@ private slots:
     void on_actionSave_as_triggered();
     void on_undo_clicked();
     void on_redo_clicked();
-
     void setBackgroundColorSlot();
+    void on_set_style_button_clicked();
+    void on_actionNew_triggered();
+
+    void on_button_copy_clicked();
+
+    void on_button_paste_clicked();
 
 private:
     Ui::NotePad *ui;
