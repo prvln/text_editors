@@ -34,13 +34,14 @@ public:
     QAction *actionSave_as;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QComboBox *comboBox;
-    QPushButton *redo;
-    QSpacerItem *horizontalSpacer;
-    QFontComboBox *fontComboBox;
-    QPushButton *undo;
     QSpacerItem *horizontalSpacer_2;
+    QPushButton *redo;
+    QFontComboBox *fontComboBox;
     QTextEdit *textEdit;
+    QComboBox *comboBox;
+    QPushButton *undo;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *setBackgroundButton;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QStatusBar *statusBar;
@@ -62,38 +63,43 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        comboBox = new QComboBox(centralWidget);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addWidget(comboBox, 0, 3, 1, 1);
+        gridLayout->addItem(horizontalSpacer_2, 0, 0, 1, 1);
 
         redo = new QPushButton(centralWidget);
         redo->setObjectName(QString::fromUtf8("redo"));
 
         gridLayout->addWidget(redo, 0, 2, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 0, 5, 1, 1);
-
         fontComboBox = new QFontComboBox(centralWidget);
         fontComboBox->setObjectName(QString::fromUtf8("fontComboBox"));
 
         gridLayout->addWidget(fontComboBox, 0, 4, 1, 1);
+
+        textEdit = new QTextEdit(centralWidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+
+        gridLayout->addWidget(textEdit, 1, 0, 1, 7);
+
+        comboBox = new QComboBox(centralWidget);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+
+        gridLayout->addWidget(comboBox, 0, 3, 1, 1);
 
         undo = new QPushButton(centralWidget);
         undo->setObjectName(QString::fromUtf8("undo"));
 
         gridLayout->addWidget(undo, 0, 1, 1, 1);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addItem(horizontalSpacer_2, 0, 0, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 0, 6, 1, 1);
 
-        textEdit = new QTextEdit(centralWidget);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        setBackgroundButton = new QPushButton(centralWidget);
+        setBackgroundButton->setObjectName(QString::fromUtf8("setBackgroundButton"));
 
-        gridLayout->addWidget(textEdit, 1, 0, 1, 6);
+        gridLayout->addWidget(setBackgroundButton, 0, 5, 1, 1);
 
         NotePad->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(NotePad);
@@ -124,6 +130,7 @@ public:
         actionSave_as->setText(QApplication::translate("NotePad", "Save as", nullptr));
         redo->setText(QApplication::translate("NotePad", "Redo", nullptr));
         undo->setText(QApplication::translate("NotePad", "Undo", nullptr));
+        setBackgroundButton->setText(QApplication::translate("NotePad", "SET BACKGROUND", nullptr));
         menuFile->setTitle(QApplication::translate("NotePad", "File", nullptr));
     } // retranslateUi
 

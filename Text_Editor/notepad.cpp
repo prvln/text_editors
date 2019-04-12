@@ -7,6 +7,7 @@ NotePad::NotePad(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("TextEditor v.0.1");
+    connect(ui->setBackgroundButton, &QPushButton::released, this, &NotePad::setBackgroundColorSlot);
 }
 
 void NotePad::on_actionOpen_triggered()
@@ -65,5 +66,10 @@ void NotePad::on_actionSave_as_triggered()
 void NotePad::on_undo_clicked() { ui->textEdit->undo(); }
 
 void NotePad::on_redo_clicked() { ui->textEdit->redo(); }
+
+void NotePad::setBackgroundColorSlot()
+{
+    ui->textEdit->setTextColor(QColorDialog::getColor(Qt::black, this));
+}
 
 NotePad::~NotePad() { delete ui; }

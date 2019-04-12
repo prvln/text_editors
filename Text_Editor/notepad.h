@@ -30,12 +30,13 @@ public:
     ~NotePad();
 
 private slots:
-
     void on_actionOpen_triggered();
     void on_actionSave_triggered();
     void on_actionSave_as_triggered();
     void on_undo_clicked();
     void on_redo_clicked();
+
+    void setBackgroundColorSlot();
 
 private:
     Ui::NotePad *ui;
