@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -33,14 +34,15 @@ public:
     QAction *actionNew;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
+    QComboBox *comboBox;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *set_style_button;
+    QPushButton *setBackgroundButton;
+    QTextEdit *textEdit;
     QPushButton *button_copy;
     QPushButton *redo;
-    QTextEdit *textEdit;
-    QPushButton *undo;
-    QPushButton *set_style_button;
-    QSpacerItem *horizontalSpacer_2;
-    QPushButton *setBackgroundButton;
     QPushButton *button_paste;
+    QPushButton *undo;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QStatusBar *statusBar;
@@ -64,6 +66,30 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        comboBox = new QComboBox(centralWidget);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+
+        gridLayout->addWidget(comboBox, 0, 7, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 0, 8, 1, 1);
+
+        set_style_button = new QPushButton(centralWidget);
+        set_style_button->setObjectName(QString::fromUtf8("set_style_button"));
+
+        gridLayout->addWidget(set_style_button, 0, 5, 1, 1);
+
+        setBackgroundButton = new QPushButton(centralWidget);
+        setBackgroundButton->setObjectName(QString::fromUtf8("setBackgroundButton"));
+
+        gridLayout->addWidget(setBackgroundButton, 0, 6, 1, 1);
+
+        textEdit = new QTextEdit(centralWidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+
+        gridLayout->addWidget(textEdit, 1, 0, 1, 9);
+
         button_copy = new QPushButton(centralWidget);
         button_copy->setObjectName(QString::fromUtf8("button_copy"));
 
@@ -74,34 +100,15 @@ public:
 
         gridLayout->addWidget(redo, 0, 2, 1, 1);
 
-        textEdit = new QTextEdit(centralWidget);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        button_paste = new QPushButton(centralWidget);
+        button_paste->setObjectName(QString::fromUtf8("button_paste"));
 
-        gridLayout->addWidget(textEdit, 1, 0, 1, 8);
+        gridLayout->addWidget(button_paste, 0, 4, 1, 1);
 
         undo = new QPushButton(centralWidget);
         undo->setObjectName(QString::fromUtf8("undo"));
 
         gridLayout->addWidget(undo, 0, 1, 1, 1);
-
-        set_style_button = new QPushButton(centralWidget);
-        set_style_button->setObjectName(QString::fromUtf8("set_style_button"));
-
-        gridLayout->addWidget(set_style_button, 0, 5, 1, 1);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 0, 7, 1, 1);
-
-        setBackgroundButton = new QPushButton(centralWidget);
-        setBackgroundButton->setObjectName(QString::fromUtf8("setBackgroundButton"));
-
-        gridLayout->addWidget(setBackgroundButton, 0, 6, 1, 1);
-
-        button_paste = new QPushButton(centralWidget);
-        button_paste->setObjectName(QString::fromUtf8("button_paste"));
-
-        gridLayout->addWidget(button_paste, 0, 4, 1, 1);
 
         NotePad->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(NotePad);
@@ -134,12 +141,12 @@ public:
         actionSave->setText(QApplication::translate("NotePad", "Save", nullptr));
         actionSave_as->setText(QApplication::translate("NotePad", "Save as", nullptr));
         actionNew->setText(QApplication::translate("NotePad", "New", nullptr));
-        button_copy->setText(QApplication::translate("NotePad", "Copy", nullptr));
-        redo->setText(QApplication::translate("NotePad", "Redo", nullptr));
-        undo->setText(QApplication::translate("NotePad", "Undo", nullptr));
         set_style_button->setText(QApplication::translate("NotePad", "Set style", nullptr));
         setBackgroundButton->setText(QApplication::translate("NotePad", "Set BackGround", nullptr));
+        button_copy->setText(QApplication::translate("NotePad", "Copy", nullptr));
+        redo->setText(QApplication::translate("NotePad", "Redo", nullptr));
         button_paste->setText(QApplication::translate("NotePad", "Paste", nullptr));
+        undo->setText(QApplication::translate("NotePad", "Undo", nullptr));
         menuFile->setTitle(QApplication::translate("NotePad", "File", nullptr));
     } // retranslateUi
 

@@ -3,24 +3,22 @@
 
 NotePad::NotePad(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::NotePad)
-{
+    ui(new Ui::NotePad) {
     ui->setupUi(this);
-    this->setWindowTitle("TextEditor v.0.1");
+    this->setWindowTitle("TextEditor v.0.2");
     connect(ui->setBackgroundButton, &QPushButton::released, this, &NotePad::setBackgroundColorSlot);
 }
 
-void NotePad::on_actionOpen_triggered()
-{
+void NotePad::on_actionOpen_triggered() {
  QString file_name = QFileDialog::getOpenFileName(this,"Open a file");
  QFile file (file_name);
  file_path=file_name;
 
-  if(!file.open(QFile::ReadOnly | QFile::Text)){
+  if(!file.open(QFile::ReadOnly | QFile::Text)) {
     QMessageBox::critical(this,"Error Opening File","File Cannot be Opened!");
     return;
   }
-  else{
+  else {
     //Read the file
     QTextStream inputData(&file);
     QString fileText = inputData.readAll();
@@ -29,8 +27,7 @@ void NotePad::on_actionOpen_triggered()
   }
 }
 
-void NotePad::on_actionSave_triggered()
-{
+void NotePad::on_actionSave_triggered() {
      QFile file(file_path);
     if(!file.open(QFile::WriteOnly | QFile::Text)){
       return;
@@ -45,15 +42,14 @@ void NotePad::on_actionSave_triggered()
     }
 }
 
-void NotePad::on_actionSave_as_triggered()
-{
+void NotePad::on_actionSave_as_triggered() {
     QString file_name = QFileDialog::getSaveFileName(this,"Save a file");
     QFile file (file_name);
     file_path = file_name;
-    if(!file.open(QFile::WriteOnly | QFile::Text)){
+    if(!file.open(QFile::WriteOnly | QFile::Text)) {
         return;
      }
-     else{
+     else {
        //Read the file
        QTextStream writeData(&file);
        QString fileText = ui->textEdit->toHtml();
@@ -63,38 +59,45 @@ void NotePad::on_actionSave_as_triggered()
      }
 }
 
-void NotePad::on_actionNew_triggered()
-{
+void NotePad::on_actionNew_triggered() {
     file_path="";
     ui->textEdit->setText("");
 }
 
-void NotePad::on_set_style_button_clicked()
-{
+void NotePad::on_set_style_button_clicked() {
         bool ok;
+
         QFont fontStyle = QFontDialog::getFont(&ok,this);
 
-        if(ok){
-                QTextCharFormat format;
-                format.setFont(fontStyle);
-                QTextCursor txtCursor(ui->textEdit->textCursor());
-                txtCursor.setCharFormat(format);
-                txtCursor.clearSelection();
-                ui->textEdit->setTextCursor(txtCursor);
+        if(ok) {
+                ui->textEdit->setCurrentFont(fontStyle);
         }
-        else{
+
+        else {
                 return;
         }
 }
 
-void NotePad::on_undo_clicked() { ui->textEdit->undo(); }
+void NotePad::on_undo_clicked() {
+    ui->textEdit->undo();
+}
 
-void NotePad::on_redo_clicked() { ui->textEdit->redo(); }
+void NotePad::on_redo_clicked() {
+    ui->textEdit->redo();
+}
 
-void NotePad::on_button_copy_clicked() { ui->textEdit->copy(); }
+void NotePad::on_button_copy_clicked() {
+    ui->textEdit->copy();
+}
 
-void NotePad::on_button_paste_clicked() { ui->textEdit->paste(); }
+void NotePad::on_button_paste_clicked() {
+    ui->textEdit->paste();
+}
 
-void NotePad::setBackgroundColorSlot() { ui->textEdit->setTextColor(QColorDialog::getColor(Qt::black, this)); }
+void NotePad::setBackgroundColorSlot() {
+    ui->textEdit->setTextColor(QColorDialog::getColor(Qt::black, this));
+}
 
-NotePad::~NotePad() { delete ui; }
+NotePad::~NotePad() {
+    delete ui;
+}

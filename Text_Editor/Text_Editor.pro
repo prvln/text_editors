@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        notepad.cpp
+        notepad.cpp \
+    font.cpp
 
 HEADERS += \
-        notepad.h
+        notepad.h \
+    font.h
 
 FORMS += \
         notepad.ui

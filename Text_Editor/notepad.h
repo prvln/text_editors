@@ -41,6 +41,8 @@ private slots:
 
     void on_button_paste_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::NotePad *ui;
     QString file_path;
