@@ -1,5 +1,7 @@
 #ifndef FONT_H
 #define FONT_H
+#pragma once
+
 
 #include <QApplication>
 #include <QMessageBox>
@@ -15,23 +17,37 @@
 #include <QtGui>
 #include <QColor>
 #include <QTextEdit>
+#include <QFontDialog>
+#include <QFontDialog>
+#include <QPalette>
 
-class Font
+
+class Font : QWidget
 {
 public:
     Font(QTextEdit *textEdit);
     ~Font();
 
+    void setBackgroundColorSlot();
+
 private slots:
 
-    void setBackgroundColorSlot();
+
 
     QColor backgroundColorNow;
     QColor fontColorNow;
+
+    void on_comboBox_currentTextChanged();
+
+    void on_comboBox_2_currentTextChanged();
+
+    void on_set_style_button_clicked();
+
 
 private:
     QTextEdit *_textEdit;
 
 };
+
 
 #endif // FONT_H

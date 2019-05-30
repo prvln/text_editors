@@ -1,12 +1,15 @@
 #include "notepad.h"
 #include "ui_notepad.h"
 
+
 NotePad::NotePad(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::NotePad) {
     ui->setupUi(this);
     this->setWindowTitle("TextEditor v.0.2");
-    connect(ui->setBackgroundButton, &QPushButton::released, this, &NotePad::setBackgroundColorSlot);
+    _font = new Font(ui->textEdit);
+
+    connect(ui->setBackgroundButton, &QPushButton::released, this);
 }
 
 void NotePad::on_actionOpen_triggered() {
@@ -64,19 +67,7 @@ void NotePad::on_actionNew_triggered() {
     ui->textEdit->setText("");
 }
 
-void NotePad::on_set_style_button_clicked() {
-        bool ok;
 
-        QFont fontStyle = QFontDialog::getFont(&ok,this);
-
-        if(ok) {
-                ui->textEdit->setCurrentFont(fontStyle);
-        }
-
-        else {
-                return;
-        }
-}
 
 void NotePad::on_undo_clicked() {
     ui->textEdit->undo();
@@ -92,10 +83,6 @@ void NotePad::on_button_copy_clicked() {
 
 void NotePad::on_button_paste_clicked() {
     ui->textEdit->paste();
-}
-
-void NotePad::setBackgroundColorSlot() {
-    ui->textEdit->setTextColor(QColorDialog::getColor(Qt::black, this));
 }
 
 NotePad::~NotePad() {
