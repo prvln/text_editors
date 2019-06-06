@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>791</width>
-    <height>583</height>
+    <width>706</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,56 +15,38 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="8">
-     <widget class="QLabel" name="label_2">
+    <item row="2" column="2">
+     <widget class="QPushButton" name="redo">
       <property name="text">
-       <string>BackGround clr</string>
+       <string>Redo</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="7">
-     <widget class="QLabel" name="label">
+    <item row="2" column="3">
+     <widget class="QPushButton" name="button_copy">
       <property name="text">
-       <string>Text Line clr</string>
+       <string>Copy</string>
       </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="10">
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-    <item row="2" column="7">
-     <widget class="QComboBox" name="comboBox_2">
-      <item>
-       <property name="text">
-        <string>white</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>black</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>green</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>yellow</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>grey</string>
-       </property>
-      </item>
      </widget>
     </item>
     <item row="2" column="6">
      <widget class="QPushButton" name="setBackgroundButton">
       <property name="text">
        <string>Set TextColor</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="6">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>   Font Colour</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="5">
+     <widget class="QPushButton" name="set_style_button">
+      <property name="text">
+       <string>Set Style</string>
       </property>
      </widget>
     </item>
@@ -75,7 +57,44 @@
       </property>
      </widget>
     </item>
+    <item row="2" column="10">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="0" colspan="11">
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="undo">
+      <property name="text">
+       <string>Undo</string>
+      </property>
+     </widget>
+    </item>
     <item row="2" column="8">
+     <widget class="QPushButton" name="set_color">
+      <property name="text">
+       <string>Line clr</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>       Font</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="9">
      <widget class="QComboBox" name="comboBox">
       <item>
        <property name="text">
@@ -109,44 +128,17 @@
       </item>
      </widget>
     </item>
-    <item row="2" column="5">
-     <widget class="QPushButton" name="set_style_button">
+    <item row="0" column="9">
+     <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Set Style</string>
+       <string>BackGround clr</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="undo">
+    <item row="0" column="8">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>Undo</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="9">
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="2" column="3">
-     <widget class="QPushButton" name="button_copy">
-      <property name="text">
-       <string>Copy</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="redo">
-      <property name="text">
-       <string>Redo</string>
+       <string>  Text Line clr</string>
       </property>
      </widget>
     </item>
@@ -157,7 +149,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>791</width>
+     <width>706</width>
      <height>21</height>
     </rect>
    </property>

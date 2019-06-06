@@ -9,7 +9,22 @@ NotePad::NotePad(QWidget *parent) :
     this->setWindowTitle("TextEditor v.0.2");
     _font = new Font(ui->textEdit);
 
-    connect(ui->setBackgroundButton, &QPushButton::released, this);
+    connect(ui->setBackgroundButton, &QPushButton::released, this, &NotePad::slot_1);
+    connect(ui->set_style_button, &QPushButton::released, this, &NotePad::slot_2);
+    connect(ui->set_color, &QPushButton::released, this, &NotePad::slot_3);
+
+}
+
+void NotePad::slot_1() {
+    _font->setBackgroundColorSlot();
+}
+
+void NotePad::slot_2(){
+    _font->on_set_style_button_clicked();
+}
+
+void NotePad::slot_3() {
+    _font->on_set_color_button_clicked();
 }
 
 void NotePad::on_actionOpen_triggered() {
@@ -67,8 +82,6 @@ void NotePad::on_actionNew_triggered() {
     ui->textEdit->setText("");
 }
 
-
-
 void NotePad::on_undo_clicked() {
     ui->textEdit->undo();
 }
@@ -85,6 +98,13 @@ void NotePad::on_button_paste_clicked() {
     ui->textEdit->paste();
 }
 
+void NotePad::on_comboBox_currentTextChanged()
+{
+    ui->textEdit->setStyleSheet("background-color: " + ui->comboBox->currentText());
+
+}
+
 NotePad::~NotePad() {
     delete ui;
 }
+

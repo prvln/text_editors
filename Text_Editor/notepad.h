@@ -32,13 +32,20 @@ public:
     ~NotePad();
 
     Ui::NotePad *ui;
-private slots:
-    void on_actionOpen_triggered();
-    void on_actionSave_triggered();
-    void on_actionSave_as_triggered();
-    void on_undo_clicked();
-    void on_redo_clicked();
 
+private slots:
+
+    void on_comboBox_currentTextChanged();
+
+    void on_actionOpen_triggered();
+
+    void on_actionSave_triggered();
+
+    void on_actionSave_as_triggered();
+
+    void on_undo_clicked();
+
+    void on_redo_clicked();
 
     void on_actionNew_triggered();
 
@@ -46,6 +53,13 @@ private slots:
 
     void on_button_paste_clicked();
 
+    void slot_1();
+
+    void slot_2();
+
+    void slot_3();
+
+    void onChangeColorButtonClicked();
 
 private:
 

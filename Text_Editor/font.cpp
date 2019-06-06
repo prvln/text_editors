@@ -8,12 +8,6 @@ Font::Font(QTextEdit *textEdit) {
     fontColorNow = Qt::black;
 }
 
-
-Font::~Font() {
-    delete _textEdit;
-}
-
-
 void Font::on_set_style_button_clicked() {
         bool ok;
 
@@ -28,17 +22,15 @@ void Font::on_set_style_button_clicked() {
         }
 }
 
+void Font::on_set_color_button_clicked() {
+    _textEdit->setTextBackgroundColor(QColorDialog::getColor(Qt::black, this));
+}
+
 void Font::setBackgroundColorSlot() {
     _textEdit->setTextColor(QColorDialog::getColor(Qt::black, this));
 }
 
-void Font::on_comboBox_currentTextChanged()
-{
-    //_textEdit->setStyleSheet("background-color: " + ->comboBox->currentText());
-
+Font::~Font() {
+    delete _textEdit;
 }
 
-void Font::on_comboBox_2_currentTextChanged()
-{
-    //_textEdit->setStyleSheet("selection-background-color: " + ui->comboBox_2->currentText());
-}
