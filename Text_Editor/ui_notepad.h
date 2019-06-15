@@ -57,11 +57,12 @@ public:
     {
         if (NotePad->objectName().isEmpty())
             NotePad->setObjectName(QString::fromUtf8("NotePad"));
-        NotePad->resize(706, 572);
+        NotePad->resize(712, 572);
         actionOpen = new QAction(NotePad);
         actionOpen->setObjectName(QString::fromUtf8("actionOpen"));
         actionSave = new QAction(NotePad);
         actionSave->setObjectName(QString::fromUtf8("actionSave"));
+        actionSave->setEnabled(true);
         actionSave_as = new QAction(NotePad);
         actionSave_as->setObjectName(QString::fromUtf8("actionSave_as"));
         actionNew = new QAction(NotePad);
@@ -150,7 +151,7 @@ public:
         NotePad->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(NotePad);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 706, 21));
+        menuBar->setGeometry(QRect(0, 0, 712, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         NotePad->setMenuBar(menuBar);

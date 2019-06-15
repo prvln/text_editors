@@ -35,6 +35,8 @@ public:
 
 private slots:
 
+    void onTextChanged();
+
     void on_comboBox_currentTextChanged();
 
     void on_actionOpen_triggered();
@@ -58,8 +60,6 @@ private slots:
     void slot_2();
 
     void slot_3();
-
-    void onChangeColorButtonClicked();
 
 private:
 

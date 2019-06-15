@@ -1,5 +1,6 @@
 #include "notepad.h"
 #include "ui_notepad.h"
+#include "QDebug"
 
 
 NotePad::NotePad(QWidget *parent) :
@@ -12,7 +13,14 @@ NotePad::NotePad(QWidget *parent) :
     connect(ui->setBackgroundButton, &QPushButton::released, this, &NotePad::slot_1);
     connect(ui->set_style_button, &QPushButton::released, this, &NotePad::slot_2);
     connect(ui->set_color, &QPushButton::released, this, &NotePad::slot_3);
+    connect(ui->textEdit, SIGNAL(textChanged()), this, SLOT(onTextChanged()));
+    ui->actionSave->setDisabled(true);
+    qDebug() << ui->textEdit->acceptRichText();
 
+    }
+
+void NotePad::onTextChanged(){
+    ui->actionSave->setEnabled(true);
 }
 
 void NotePad::slot_1() {
@@ -40,9 +48,11 @@ void NotePad::on_actionOpen_triggered() {
     //Read the file
     QTextStream inputData(&file);
     QString fileText = inputData.readAll();
-    ui->textEdit->setHtml(fileText);
+    ui->textEdit->setText(fileText);
     file.close();
+    ui->actionSave->setDisabled(true);
   }
+
 }
 
 void NotePad::on_actionSave_triggered() {
@@ -53,10 +63,11 @@ void NotePad::on_actionSave_triggered() {
     else{
       //Read the file
       QTextStream writeData(&file);
-      QString fileText = ui->textEdit->toHtml();
+      QString fileText = ui->textEdit->toPlainText();
       writeData << fileText;
       file.flush();
       file.close();
+      ui->actionSave->setDisabled(true);
     }
 }
 
@@ -70,16 +81,18 @@ void NotePad::on_actionSave_as_triggered() {
      else {
        //Read the file
        QTextStream writeData(&file);
-       QString fileText = ui->textEdit->toHtml();
+       QString fileText = ui->textEdit->toPlainText();
        writeData << fileText;
        file.flush();
        file.close();
+       ui->actionSave->setDisabled(true);
      }
 }
 
 void NotePad::on_actionNew_triggered() {
     file_path="";
     ui->textEdit->setText("");
+    ui->actionSave->setDisabled(true);
 }
 
 void NotePad::on_undo_clicked() {
