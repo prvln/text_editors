@@ -119,5 +119,6 @@ void NotePad::on_comboBox_currentTextChanged()
 
 NotePad::~NotePad() {
     delete ui;
+    delete _font;
 }
 
