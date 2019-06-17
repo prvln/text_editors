@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_NotePad_t {
     QByteArrayData data[15];
-    char stringdata0[252];
+    char stringdata0[266];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,23 +38,24 @@ QT_MOC_LITERAL(3, 23, 30), // "on_comboBox_currentTextChanged"
 QT_MOC_LITERAL(4, 54, 23), // "on_actionOpen_triggered"
 QT_MOC_LITERAL(5, 78, 23), // "on_actionSave_triggered"
 QT_MOC_LITERAL(6, 102, 26), // "on_actionSave_as_triggered"
-QT_MOC_LITERAL(7, 129, 15), // "on_undo_clicked"
-QT_MOC_LITERAL(8, 145, 15), // "on_redo_clicked"
-QT_MOC_LITERAL(9, 161, 22), // "on_actionNew_triggered"
-QT_MOC_LITERAL(10, 184, 22), // "on_button_copy_clicked"
-QT_MOC_LITERAL(11, 207, 23), // "on_button_paste_clicked"
-QT_MOC_LITERAL(12, 231, 6), // "slot_1"
-QT_MOC_LITERAL(13, 238, 6), // "slot_2"
-QT_MOC_LITERAL(14, 245, 6) // "slot_3"
+QT_MOC_LITERAL(7, 129, 22), // "on_button_undo_clicked"
+QT_MOC_LITERAL(8, 152, 22), // "on_button_redo_clicked"
+QT_MOC_LITERAL(9, 175, 22), // "on_actionNew_triggered"
+QT_MOC_LITERAL(10, 198, 22), // "on_button_copy_clicked"
+QT_MOC_LITERAL(11, 221, 23), // "on_button_paste_clicked"
+QT_MOC_LITERAL(12, 245, 6), // "slot_1"
+QT_MOC_LITERAL(13, 252, 6), // "slot_2"
+QT_MOC_LITERAL(14, 259, 6) // "slot_3"
 
     },
     "NotePad\0onTextChanged\0\0"
     "on_comboBox_currentTextChanged\0"
     "on_actionOpen_triggered\0on_actionSave_triggered\0"
-    "on_actionSave_as_triggered\0on_undo_clicked\0"
-    "on_redo_clicked\0on_actionNew_triggered\0"
-    "on_button_copy_clicked\0on_button_paste_clicked\0"
-    "slot_1\0slot_2\0slot_3"
+    "on_actionSave_as_triggered\0"
+    "on_button_undo_clicked\0on_button_redo_clicked\0"
+    "on_actionNew_triggered\0on_button_copy_clicked\0"
+    "on_button_paste_clicked\0slot_1\0slot_2\0"
+    "slot_3"
 };
 #undef QT_MOC_LITERAL
 
@@ -115,8 +116,8 @@ void NotePad::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 2: _t->on_actionOpen_triggered(); break;
         case 3: _t->on_actionSave_triggered(); break;
         case 4: _t->on_actionSave_as_triggered(); break;
-        case 5: _t->on_undo_clicked(); break;
-        case 6: _t->on_redo_clicked(); break;
+        case 5: _t->on_button_undo_clicked(); break;
+        case 6: _t->on_button_redo_clicked(); break;
         case 7: _t->on_actionNew_triggered(); break;
         case 8: _t->on_button_copy_clicked(); break;
         case 9: _t->on_button_paste_clicked(); break;

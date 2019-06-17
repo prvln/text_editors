@@ -35,7 +35,7 @@ public:
     QAction *actionNew;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QPushButton *redo;
+    QPushButton *button_redo;
     QPushButton *button_copy;
     QPushButton *setBackgroundButton;
     QLabel *label_3;
@@ -43,7 +43,7 @@ public:
     QPushButton *button_paste;
     QSpacerItem *horizontalSpacer_2;
     QTextEdit *textEdit;
-    QPushButton *undo;
+    QPushButton *button_undo;
     QPushButton *set_color;
     QLabel *label_4;
     QComboBox *comboBox;
@@ -73,10 +73,10 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        redo = new QPushButton(centralWidget);
-        redo->setObjectName(QString::fromUtf8("redo"));
+        button_redo = new QPushButton(centralWidget);
+        button_redo->setObjectName(QString::fromUtf8("button_redo"));
 
-        gridLayout->addWidget(redo, 2, 2, 1, 1);
+        gridLayout->addWidget(button_redo, 2, 2, 1, 1);
 
         button_copy = new QPushButton(centralWidget);
         button_copy->setObjectName(QString::fromUtf8("button_copy"));
@@ -112,10 +112,10 @@ public:
 
         gridLayout->addWidget(textEdit, 3, 0, 1, 11);
 
-        undo = new QPushButton(centralWidget);
-        undo->setObjectName(QString::fromUtf8("undo"));
+        button_undo = new QPushButton(centralWidget);
+        button_undo->setObjectName(QString::fromUtf8("button_undo"));
 
-        gridLayout->addWidget(undo, 2, 1, 1, 1);
+        gridLayout->addWidget(button_undo, 2, 1, 1, 1);
 
         set_color = new QPushButton(centralWidget);
         set_color->setObjectName(QString::fromUtf8("set_color"));
@@ -179,13 +179,13 @@ public:
         actionSave->setText(QApplication::translate("NotePad", "Save", nullptr));
         actionSave_as->setText(QApplication::translate("NotePad", "Save as", nullptr));
         actionNew->setText(QApplication::translate("NotePad", "New", nullptr));
-        redo->setText(QApplication::translate("NotePad", "Redo", nullptr));
+        button_redo->setText(QApplication::translate("NotePad", "Redo", nullptr));
         button_copy->setText(QApplication::translate("NotePad", "Copy", nullptr));
         setBackgroundButton->setText(QApplication::translate("NotePad", "Set TextColor", nullptr));
         label_3->setText(QApplication::translate("NotePad", "   Font Colour", nullptr));
         set_style_button->setText(QApplication::translate("NotePad", "Set Style", nullptr));
         button_paste->setText(QApplication::translate("NotePad", "Paste", nullptr));
-        undo->setText(QApplication::translate("NotePad", "Undo", nullptr));
+        button_undo->setText(QApplication::translate("NotePad", "Undo", nullptr));
         set_color->setText(QApplication::translate("NotePad", "Line clr", nullptr));
         label_4->setText(QApplication::translate("NotePad", "       Font", nullptr));
         comboBox->setItemText(0, QApplication::translate("NotePad", "white", nullptr));

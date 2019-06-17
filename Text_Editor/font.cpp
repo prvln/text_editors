@@ -22,15 +22,14 @@ void Font::on_set_style_button_clicked() {
         }
 }
 
-void Font::on_set_color_button_clicked() {
+void Font::on_setTextBackgroundColor_button_clicked() {
     _textEdit->setTextBackgroundColor(QColorDialog::getColor(Qt::black, this));
 }
 
-void Font::setBackgroundColorSlot() {
+void Font::on_setTextColor_button_clicked() {
     _textEdit->setTextColor(QColorDialog::getColor(Qt::black, this));
 }
 
 Font::~Font() {
     delete _textEdit;
 }
-

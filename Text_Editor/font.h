@@ -25,11 +25,11 @@ public:
 
     Font(QTextEdit *textEdit);
 
-    void on_bck_grd_clicked();
+    void on_BackGround_Colour_button_clicked();
 
-    void setBackgroundColorSlot();
+    void on_setTextColor_button_clicked();
 
-    void on_set_color_button_clicked();
+    void on_setTextBackgroundColor_button_clicked();
 
     void on_set_style_button_clicked();
 
@@ -41,9 +41,8 @@ private slots:
     QColor fontColorNow;
 
 private:
-    QTextEdit *_textEdit;
+    QTextEdit* _textEdit;
 
 };
-
 
 #endif // FONT_H

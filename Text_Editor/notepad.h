@@ -45,9 +45,9 @@ private slots:
 
     void on_actionSave_as_triggered();
 
-    void on_undo_clicked();
+    void on_button_undo_clicked();
 
-    void on_redo_clicked();
+    void on_button_redo_clicked();
 
     void on_actionNew_triggered();
 
@@ -64,7 +64,7 @@ private slots:
 private:
 
     QString file_path;
-    Font *_font;
+    Font* _font;
 };
 
 #endif // NOTEPAD_H

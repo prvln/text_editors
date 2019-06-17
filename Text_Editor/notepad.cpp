@@ -2,12 +2,11 @@
 #include "ui_notepad.h"
 #include "QDebug"
 
-
 NotePad::NotePad(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::NotePad) {
     ui->setupUi(this);
-    this->setWindowTitle("TextEditor v.0.2");
+    this->setWindowTitle("TextEditor v.0.3");
     _font = new Font(ui->textEdit);
 
     connect(ui->setBackgroundButton, &QPushButton::released, this, &NotePad::slot_1);
@@ -15,8 +14,7 @@ NotePad::NotePad(QWidget *parent) :
     connect(ui->set_color, &QPushButton::released, this, &NotePad::slot_3);
     connect(ui->textEdit, SIGNAL(textChanged()), this, SLOT(onTextChanged()));
     ui->actionSave->setDisabled(true);
-    qDebug() << ui->textEdit->acceptRichText();
-
+    //qDebug() << ui->textEdit->acceptRichText();
     }
 
 void NotePad::onTextChanged(){
@@ -24,7 +22,7 @@ void NotePad::onTextChanged(){
 }
 
 void NotePad::slot_1() {
-    _font->setBackgroundColorSlot();
+    _font->on_setTextColor_button_clicked();
 }
 
 void NotePad::slot_2(){
@@ -32,7 +30,7 @@ void NotePad::slot_2(){
 }
 
 void NotePad::slot_3() {
-    _font->on_set_color_button_clicked();
+    _font->on_setTextBackgroundColor_button_clicked();
 }
 
 void NotePad::on_actionOpen_triggered() {
@@ -95,11 +93,11 @@ void NotePad::on_actionNew_triggered() {
     ui->actionSave->setDisabled(true);
 }
 
-void NotePad::on_undo_clicked() {
+void NotePad::on_button_undo_clicked() {
     ui->textEdit->undo();
 }
 
-void NotePad::on_redo_clicked() {
+void NotePad::on_button_redo_clicked() {
     ui->textEdit->redo();
 }
 
@@ -111,14 +109,12 @@ void NotePad::on_button_paste_clicked() {
     ui->textEdit->paste();
 }
 
-void NotePad::on_comboBox_currentTextChanged()
-{
-    ui->textEdit->setStyleSheet("background-color: " + ui->comboBox->currentText());
-
+void NotePad::on_comboBox_currentTextChanged(){
+    ui->textEdit->setStyleSheet("background-color: "
+                                + ui->comboBox->currentText());
 }
 
 NotePad::~NotePad() {
     delete ui;
     delete _font;
 }
-
